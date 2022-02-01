@@ -103,7 +103,7 @@ std::optional<dt::json::int_type> dt::json::Lexer::is_int() noexcept {
   if (ec != std::errc{})
     return {};
 
-  m_scanner.set_current(int_end);
+  m_scanner.set_current(int_end - 1);
 
   return int_value;
 }
@@ -126,6 +126,8 @@ std::optional<dt::json::float_type> dt::json::Lexer::is_float() noexcept {
   if (ec != std::errc{})
     return {};
 
+  m_scanner.set_current(float_end - 1);
+
   return float_value;
 
 #else
@@ -134,6 +136,8 @@ std::optional<dt::json::float_type> dt::json::Lexer::is_float() noexcept {
 
   try {
     auto const float_string = std::string{float_begin, float_end};
+
+    m_scanner.set_current(float_end - 1);
 
     if constexpr (std::is_same_v<float_type, float>)
       return std::stof(float_string);

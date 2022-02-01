@@ -77,9 +77,12 @@ dt::json::object_type dt::json::Parser::parse_object() {
 
     increment();
 
-    if (!m_current->has_type(token_type::Comma))
+    if (!m_current->has_type(token_type::Comma)) {
       if (!m_current->has_type(token_type::RBrace))
         throw_parser_exception("expected ',' or '}'");
+
+      else break;
+    }
 
     increment();
   }
@@ -113,10 +116,12 @@ dt::json::array_type dt::json::Parser::parse_array() {
 
     increment();
 
-    if (!m_current->has_type(token_type::Comma))
-      if (!m_current->has_type(token_type::RBrace))
+    if (!m_current->has_type(token_type::Comma)) {
+      if (!m_current->has_type(token_type::RBrack))
         throw_parser_exception("expected ',' or ']'");
 
+      else break;
+    }
     increment();
   }
 
