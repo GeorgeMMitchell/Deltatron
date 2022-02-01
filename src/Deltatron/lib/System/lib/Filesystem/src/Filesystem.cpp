@@ -7,8 +7,6 @@
 
 #include <iostream>
 
-namespace stdfs = std::filesystem;
-
 namespace dt::Private {
 
 #ifdef _WIN32

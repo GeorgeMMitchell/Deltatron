@@ -30,6 +30,8 @@ public:
   constexpr stdfs::path const& root_dir() const noexcept { return m_root_dir; }
 };
 
+std::string file_copy(stdfs::path const& file_path);
+
 }
 
 #endif // DELTATRON_FILESYSTEM_HEADER

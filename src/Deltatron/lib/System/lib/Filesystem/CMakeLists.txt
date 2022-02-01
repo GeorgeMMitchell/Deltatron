@@ -14,6 +14,7 @@ target_include_directories("dt_Filesystem"
 target_sources("dt_Filesystem"
   PRIVATE
     "include/public/dt/Filesystem.hpp"
+    "src/file_copy.cpp"
     "src/Filesystem.cpp")
 
 add_library("dt_Filesystem_interface" INTERFACE)
