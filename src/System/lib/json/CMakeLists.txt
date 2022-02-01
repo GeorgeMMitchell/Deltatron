@@ -3,7 +3,7 @@ add_library("dt_json")
 target_link_libraries("dt_json"
   PRIVATE
     "dt_build_flags"
-    "dt_exception")
+    "dt_exception_interface")
 
 target_include_directories("dt_json"
   PRIVATE
