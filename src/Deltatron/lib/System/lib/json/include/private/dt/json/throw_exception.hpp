@@ -13,7 +13,7 @@ namespace dt::json {
 [[noreturn]] inline void throw_exception(std::string const& id, std::size_t const line, std::string const& message) {
   auto msg = std::stringstream{};
 
-  msg << "JSON parsing error in " << id << " at line " << line << ": " << message;
+  msg << id << ':' << line << ": " << message;
 
   throw dt::exception{msg.str()};
 }
