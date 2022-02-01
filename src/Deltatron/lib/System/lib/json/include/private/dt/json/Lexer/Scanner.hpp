@@ -7,7 +7,7 @@ namespace dt::json {
 
 class Scanner final {
 public:
-  using iterator = typename std::string::const_iterator;
+  using iterator = std::string::const_iterator;
 
 private:
   iterator const m_begin;

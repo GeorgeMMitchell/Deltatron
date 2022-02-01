@@ -96,8 +96,6 @@ std::optional<dt::json::int_type> dt::json::Lexer::is_int() noexcept {
   while (int_end != m_scanner.end() && std::isdigit(*int_end))
     ++int_end;
 
-  --int_end;
-
   int_type int_value;
 
   auto const [ptr, ec] = std::from_chars(&*int_begin, &*int_end, int_value);
