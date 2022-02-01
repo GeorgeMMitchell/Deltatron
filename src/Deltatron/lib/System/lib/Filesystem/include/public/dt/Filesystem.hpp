@@ -12,7 +12,7 @@ namespace stdfs = std::filesystem;
 
 class Filesystem final {
 private:
-  stdfs::path m_root_path;
+  stdfs::path m_root_dir;
 
 public:
   Filesystem(ProgramArgs const& args);
@@ -27,7 +27,7 @@ public:
 
   ~Filesystem() noexcept = default;
 
-  constexpr stdfs::path const& root_path() const noexcept { return m_root_path; }
+  constexpr stdfs::path const& root_dir() const noexcept { return m_root_dir; }
 };
 
 }

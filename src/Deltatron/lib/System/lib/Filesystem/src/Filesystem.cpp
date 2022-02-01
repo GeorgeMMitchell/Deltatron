@@ -14,14 +14,14 @@ namespace dt::Private {
 #ifdef _WIN32
 stdfs::path win32_resolve_program_root_dir(ProgramArgs const&) {
   if (auto const o_local_str = env::entry_value("LOCALAPPDATA"); o_local_str) {
-    auto const root_path = stdfs::path{*o_local_str} / "Deltatron";
+    auto const root_dir = stdfs::path{*o_local_str} / "Deltatron";
 
-    if (stdfs::exists(root_path) && !stdfs::is_directory(root_path))
-      throw dt::exception{root_path.string() + " is not a directory"};
+    if (stdfs::exists(root_dir) && !stdfs::is_directory(root_dir))
+      throw dt::exception{root_dir.string() + " is not a directory"};
 
-    stdfs::create_directories(root_path);
+    stdfs::create_directories(root_dir);
 
-    return root_path;
+    return root_dir;
   }
 
   return stdfs::current_path();
@@ -30,15 +30,15 @@ stdfs::path win32_resolve_program_root_dir(ProgramArgs const&) {
 #else
 stdfs::path gen_resolve_program_root_dir(ProgramArgs const& args) {
   if (auto const o_home = env::entry_value("HOME"); o_home) {
-    auto const root_path = (stdfs::path{*o_home} / ".config") / "deltatron";
+    auto const root_dir = (stdfs::path{*o_home} / ".config") / "deltatron";
 
-    if (!stdfs::exists(root_path))
-      stdfs::create_directories(root_path);
+    if (!stdfs::exists(root_dir))
+      stdfs::create_directories(root_dir);
 
-    else if (!stdfs::is_directory(root_path))
-      throw dt::exception{"default root filesystem directory is not a directory"};
+    else if (!stdfs::is_directory(root_dir))
+      throw dt::exception{root_dir.string() + " is not a directory"};
 
-    return root_path
+    return root_dir
   }
 
   return stdfs::current_path();
