@@ -1,17 +1,30 @@
-add_executable("deltatron")
+add_subdirectory("lib")
 
-target_link_libraries("deltatron"
+add_library("dt")
+
+target_include_directories("dt"
   PRIVATE
+    "${CMAKE_CURRENT_SOURCE_DIR}/include/private"
+  PUBLIC
+    "${CMAKE_CURRENT_SOURCE_DIR}/include/public")
+
+target_sources("dt"
+  PRIVATE
+    "include/public/dt/Deltatron.hpp"
+    "src/Deltatron.cpp")
+
+target_link_libraries("dt"
+  PUBLIC
     "dt_System"
     "dt_GPU"
     "dt_Window")
 
-target_include_directories("deltatron"
+add_executable("deltatron")
+
+target_link_libraries("deltatron"
   PRIVATE
-    "${CMAKE_CURRENT_SOURCE_DIR}/include/private")
+    "dt")
 
 target_sources("deltatron"
   PRIVATE
-    "include/private/dt/Deltatron.hpp"
-    "src/Deltatron/main.cpp"
-    "src/Deltatron.cpp")
+    "src/main.cpp")
