@@ -5,7 +5,7 @@
 
 #include <cstdlib>
 
-int main(int argc, dt::ProgramArgs::argv_type const argv) {
+int main(int argc, dt::Deltatron::argv_type const argv) {
   try {
     return dt::Deltatron{argc, argv}.run();
 
