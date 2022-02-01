@@ -27,6 +27,7 @@ target_link_libraries("dt_System_interface"
   INTERFACE
     "dt_env_interface"
     "dt_ProgramArgs_interface"
+    "dt_Filesystem_interface"
     "dt_Logger_interface")
 
 target_include_directories("dt_System_interface"
