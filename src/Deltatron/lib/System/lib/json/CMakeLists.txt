@@ -3,7 +3,7 @@ add_library("dt_json")
 target_link_libraries("dt_json"
   PRIVATE
     "dt_build_flags"
-    "dt_exception_interface")
+    "dt_exception")
 
 target_include_directories("dt_json"
   PRIVATE
@@ -13,6 +13,8 @@ target_include_directories("dt_json"
 
 target_sources("dt_json"
   PRIVATE
+    "include/private/dt/json/throw_exception.hpp"
+
     "include/private/dt/json/Parser.hpp"
     "src/Parser.cpp"
 
@@ -22,9 +24,6 @@ target_sources("dt_json"
     "src/Lexer/Scanner.cpp"
     "include/private/dt/json/Lexer.hpp"
     "src/Lexer.cpp"
-
-    "include/private/dt/json/throw_exception.hpp"
-    "src/throw_exception.cpp"
 
     "include/public/dt/json/value/types.hpp"
     "include/public/dt/json/value.hpp"

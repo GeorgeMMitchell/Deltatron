@@ -17,6 +17,10 @@ dt::json::token_stream_type dt::json::Lexer::scan(std::string const& id, std::st
   return token_stream;
 }
 
+dt::json::Lexer::Lexer(std::string const& id, std::string const& data)
+: m_id{id},
+  m_scanner{data} {}
+
 void dt::json::Lexer::append_token(token_stream_type& token_stream) {
   if (auto const opt_keychar = is_keychar(); opt_keychar)
     token_stream.push_back({*opt_keychar, m_scanner.line()});
@@ -36,7 +40,7 @@ void dt::json::Lexer::append_token(token_stream_type& token_stream) {
   else if (auto const opt_null = is_null(); opt_null)
     token_stream.push_back({token_type::Null, m_scanner.line()});
 
-  else throw_exception(m_id, m_scanner.line(), "unknown token");
+  else throw_lexer_exception("unknown token");
 }
 
 std::optional<dt::json::token_type> dt::json::Lexer::is_keychar() noexcept {
@@ -57,7 +61,7 @@ std::optional<std::string> dt::json::Lexer::is_string() {
     return {};
 
   if (m_scanner.current() >= m_scanner.end() - 2)
-    throw_exception(m_id, m_scanner.line(), "string is missing closing quote");
+    throw_lexer_exception("string is missing closing quote");
 
   auto const string_begin = m_scanner.current() + 1;
   auto       string_end   = string_begin;
@@ -71,7 +75,7 @@ std::optional<std::string> dt::json::Lexer::is_string() {
   }
 
   if (done())
-    throw_exception(m_id, m_scanner.line(), "string is missing closing quote");
+    throw_lexer_exception("string is missing closing quote");
 
   m_scanner.set_current(string_end);
 
@@ -176,3 +180,6 @@ bool dt::json::Lexer::is_null() noexcept {
 
   return false;
 }
+
+[[noreturn]] void dt::json::Lexer::throw_lexer_exception(std::string const& what)
+{ throw_exception(m_id, m_scanner.line(), what); }

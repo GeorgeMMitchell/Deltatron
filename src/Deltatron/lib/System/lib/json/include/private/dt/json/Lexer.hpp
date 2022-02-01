@@ -46,6 +46,8 @@ private:
   std::optional<bool> is_bool() noexcept;
 
   bool is_null() noexcept;
+
+  [[noreturn]] void throw_lexer_exception(std::string const& what);
 };
 
 }

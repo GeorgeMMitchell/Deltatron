@@ -24,12 +24,12 @@ dt::json::value dt::json::Parser::parse(std::string const& id, token_stream_type
     case token_type::Null:   return std::nullopt;
 
     // Error
-    //case token_type::RBrace: [[fallthrough]];
-    //case token_type::RBrack: [[fallthrough]];
-    //case token_type::Comma:  [[fallthrough]];
-    //case token_type::Colon:
+    case token_type::RBrace: [[fallthrough]];
+    case token_type::RBrack: [[fallthrough]];
+    case token_type::Comma:  [[fallthrough]];
+    case token_type::Colon:  [[fallthrough]];
     default:
-      throw_exception(id, 1, "expected root json value");
+      throw_exception(id, 1, "invalid json root value");
   }
 }
 
