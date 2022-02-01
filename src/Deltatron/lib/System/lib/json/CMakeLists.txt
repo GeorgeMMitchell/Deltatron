@@ -25,6 +25,8 @@ target_sources("dt_json"
     "include/private/dt/json/Lexer.hpp"
     "src/Lexer.cpp"
 
+    "src/str_indent.cpp"
+
     "include/public/dt/json/value/types.hpp"
     "include/public/dt/json/value.hpp"
     "src/value.cpp"

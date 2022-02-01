@@ -7,10 +7,14 @@ namespace dt::json {
 
 class value final {
 public:
-  using type = value_type;
+  enum class enum_t {
+    Object, Array, String,
+    Int, Float, Bool, Null
+  };
 
 private:
-  type m_value;
+  value_type m_value;
+  enum_t     m_type;
 
 public:
   value();
@@ -75,6 +79,8 @@ public:
   constexpr auto& as_any() const noexcept { return m_value; }
 
   constexpr auto& as_any()       noexcept { return m_value; }
+
+  constexpr auto type() const noexcept { return m_type; }
 };
 
 }

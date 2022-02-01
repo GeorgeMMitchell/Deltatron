@@ -9,6 +9,12 @@
 namespace dt::json {
 
 class document final {
+public:
+  enum class fmt {
+    Indented,
+    None
+  };
+
 private:
   std::string m_id;
   value       m_root_value;
@@ -27,6 +33,8 @@ public:
   document& operator=(document&&) = default;
 
   ~document() = default;
+
+  std::string str_indent() const;
 
   constexpr auto& croot_value() const noexcept { return m_root_value; }
 
