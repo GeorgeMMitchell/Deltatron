@@ -12,7 +12,7 @@ target_sources("dt_utility"
   PRIVATE
     "include/public/dt/util/buffer.hpp"
     "include/public/dt/util/hash.hpp"
-    "include/public/dt/util/ignore.hpp"
+    "include/public/dt/util/ignore_unused.hpp"
     "include/public/dt/util/random.hpp"
 
     "include/public/dt/util/string_vector.hpp"
