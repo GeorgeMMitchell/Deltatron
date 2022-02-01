@@ -28,14 +28,18 @@ public:
 
   ~document() = default;
 
-  constexpr auto& croot() const noexcept { return m_root_value; }
+  constexpr auto& croot_value() const noexcept { return m_root_value; }
 
-  constexpr auto& root() const noexcept { return m_root_value; }
+  constexpr auto& root_value() const noexcept { return m_root_value; }
 
-  constexpr auto& root() noexcept { return m_root_value; }
+  constexpr auto& root_value() noexcept { return m_root_value; }
 
   constexpr auto& id() const noexcept { return m_id; }
 }; // document
+
+std::string to_string(document const& doc);
+
+std::string to_formatted_string(document const& doc);
 
 } // json
 
