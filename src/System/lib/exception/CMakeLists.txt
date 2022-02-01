@@ -2,7 +2,7 @@ add_library("dt_exception")
 
 target_link_libraries("dt_exception"
   PRIVATE
-    "dt_build_requirements")
+    "dt_build_flags")
 
 target_include_directories("dt_exception"
   PUBLIC

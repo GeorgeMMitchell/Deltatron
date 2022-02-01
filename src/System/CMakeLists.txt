@@ -3,10 +3,12 @@ add_subdirectory("lib")
 add_library("dt_System")
 
 target_link_libraries("dt_System"
-  PRIVATE
-    "dt_configure_file"
-    "dt_build_requirements"
   PUBLIC
+    "dt_build_flags"
+    "dt_build_info"
+    "dt_exception"
+    "dt_utility"
+    "dt_json"
     "dt_env"
     "dt_ProgramArgs"
     "dt_Filesystem"
@@ -25,6 +27,11 @@ add_library("dt_System_interface" INTERFACE)
 
 target_link_libraries("dt_System_interface"
   INTERFACE
+    "dt_build_flags"
+    "dt_build_info"
+    "dt_exception_interface"
+    "dt_utility_interface"
+    "dt_json_interface"
     "dt_env_interface"
     "dt_ProgramArgs_interface"
     "dt_Filesystem_interface"

@@ -2,11 +2,10 @@ add_library("dt_Filesystem")
 
 target_link_libraries("dt_Filesystem"
   PRIVATE
-    "dt_build_requirements"
-    "dt_env"
-  PUBLIC
-    "dt_exception"
-    "dt_ProgramArgs")
+    "dt_build_flags"
+    "dt_env_interface"
+    "dt_exception_interface"
+    "dt_ProgramArgs_interface")
 
 target_include_directories("dt_Filesystem"
   PUBLIC

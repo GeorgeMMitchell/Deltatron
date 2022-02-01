@@ -1,3 +1,3 @@
-include("build_requirements.cmake")
+include("build_info.cmake")
 
-include("configure_file.cmake")
+include("build_flags.cmake")

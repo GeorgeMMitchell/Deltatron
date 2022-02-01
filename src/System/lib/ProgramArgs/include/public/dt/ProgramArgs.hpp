@@ -8,6 +8,8 @@
 #include <vector>
 #include <unordered_map>
 
+#include <build/info.h>
+
 #include <cstddef>
 
 namespace dt {

@@ -2,10 +2,9 @@ add_library("dt_ProgramArgs")
 
 target_link_libraries("dt_ProgramArgs"
   PRIVATE
-    "dt_configure_file"
-    "dt_build_requirements"
-  PUBLIC
-    "dt_exception")
+    "dt_build_flags"
+    "dt_build_info"
+    "dt_exception_interface")
 
 target_include_directories("dt_ProgramArgs"
   PUBLIC
@@ -22,7 +21,8 @@ add_library("dt_ProgramArgs_interface" INTERFACE)
 
 target_link_libraries("dt_ProgramArgs_interface"
   INTERFACE
-    "dt_exception")
+    "dt_build_info"
+    "dt_exception_interface")
 
 target_include_directories("dt_ProgramArgs_interface"
   INTERFACE

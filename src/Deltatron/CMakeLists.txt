@@ -2,8 +2,6 @@ add_executable("deltatron")
 
 target_link_libraries("deltatron"
   PRIVATE
-    "dt_configure_file"
-    "dt_build_requirements"
     "dt_System"
     "dt_GPU"
     "dt_Window")

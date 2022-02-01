@@ -4,8 +4,6 @@ add_library("dt_GPU")
 
 target_link_libraries("dt_GPU"
   PRIVATE
-    "dt_build_requirements"
-    "dt_utility"
     "Vulkan::Vulkan"
   PUBLIC
     "dt_System_interface")
@@ -40,6 +38,10 @@ target_sources("dt_GPU"
     "src/GPU.cpp")
 
 add_library("dt_GPU_interface" INTERFACE)
+
+target_link_libraries("dt_GPU_interface"
+  INTERFACE
+    "dt_System_interface")
 
 target_include_directories("dt_GPU_interface"
   INTERFACE

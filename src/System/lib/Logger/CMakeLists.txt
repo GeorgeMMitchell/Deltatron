@@ -2,12 +2,10 @@ add_library("dt_Logger")
 
 target_link_libraries("dt_Logger"
   PRIVATE
-    "dt_build_requirements"
-    "dt_configure_file"
-  PUBLIC
-    "dt_exception"
-    "dt_ProgramArgs"
-    "dt_Filesystem")
+    "dt_build_flags"
+    "dt_exception_interface"
+    "dt_ProgramArgs_interface"
+    "dt_Filesystem_interface")
 
 target_include_directories("dt_Logger"
   PUBLIC

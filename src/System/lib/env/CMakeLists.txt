@@ -2,8 +2,8 @@ add_library("dt_env")
 
 target_link_libraries("dt_env"
   PRIVATE
-    "dt_build_requirements"
-    "dt_utility")
+    "dt_utility_interface"
+    "dt_build_flags")
 
 target_include_directories("dt_env"
   PUBLIC
@@ -16,4 +16,6 @@ target_sources("dt_env"
 
 add_library("dt_env_interface" INTERFACE)
 
-target_include_directories("dt_env_interface" INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/include/public")
+target_include_directories("dt_env_interface"
+  INTERFACE
+    "${CMAKE_CURRENT_SOURCE_DIR}/include/public")

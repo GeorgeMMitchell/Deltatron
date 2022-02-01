@@ -1,10 +1,10 @@
-add_library("dt_build_requirements" INTERFACE)
+add_library("dt_build_flags" INTERFACE)
 
-target_compile_features("dt_build_requirements"
+target_compile_features("dt_build_flags"
   INTERFACE
     cxx_std_17)
 
-target_compile_options("dt_build_requirements"
+target_compile_options("dt_build_flags"
   INTERFACE
     # https://lefticus.gitbooks.io/cpp-best-practices
     $<$<CXX_COMPILER_ID:MSVC>:
@@ -63,6 +63,6 @@ target_compile_options("dt_build_requirements"
       -Wuseless-cast           # (only in GCC >= 4.8) warn if you perform a cast to the same type
     >)
 
-target_compile_definitions("dt_build_requirements"
+target_compile_definitions("dt_build_flags"
   INTERFACE
     $<$<PLATFORM_ID:Windows>:UNICODE>)

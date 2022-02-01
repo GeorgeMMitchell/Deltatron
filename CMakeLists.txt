@@ -4,6 +4,4 @@ project("Deltatron" VERSION 0.0.0.0 LANGUAGES CXX C)
 
 add_subdirectory("cmake")
 
-add_subdirectory("lib")
-
 add_subdirectory("src")

@@ -1,8 +1,8 @@
 add_library("dt_utility")
 
 target_link_libraries("dt_utility"
-  PUBLIC
-    "dt_build_requirements")
+  PRIVATE
+    "dt_build_flags")
 
 target_include_directories("dt_utility"
   PUBLIC
@@ -17,3 +17,9 @@ target_sources("dt_utility"
 
     "include/public/dt/util/string_vector.hpp"
     "src/string_vector.cpp")
+
+add_library("dt_utility_interface" INTERFACE)
+
+target_include_directories("dt_utility_interface"
+  INTERFACE
+    "${CMAKE_CURRENT_SOURCE_DIR}/include/public")

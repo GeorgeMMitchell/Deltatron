@@ -1,7 +1,5 @@
 #include <dt/ProgramArgs.hpp>
 
-#include <cmake/cmake_info.h>
-
 #include <algorithm>
 #include <iostream>
 

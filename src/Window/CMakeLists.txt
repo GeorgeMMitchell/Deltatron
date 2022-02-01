@@ -1,9 +1,6 @@
 add_library("dt_Window")
 
 target_link_libraries("dt_Window"
-  PRIVATE
-    "dt_build_requirements"
-    "dt_utility"
   PUBLIC
     "dt_System_interface")
 
