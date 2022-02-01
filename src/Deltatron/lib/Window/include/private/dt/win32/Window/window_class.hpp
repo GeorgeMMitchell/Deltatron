@@ -21,7 +21,7 @@ public:
 
   constexpr WNDCLASSEXW& get() noexcept { return m_window_class; }
 
-  constexpr wchar_t const* name() noexcept { return m_class_name.c_str(); }
+  wchar_t const* name() const noexcept;
 };
 
 }

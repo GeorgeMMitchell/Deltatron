@@ -29,4 +29,7 @@ dt::window_class::window_class(System const&, HINSTANCE instance) noexcept
 : m_class_name{L"Deltatron Window Class"},
   m_window_class{Private::create_window_class(m_class_name, instance)} {}
 
+wchar_t const* dt::window_class::name() const noexcept
+{ return m_class_name.c_str(); }
+
 dt::window_class::~window_class() noexcept {}
