@@ -64,4 +64,4 @@ stdfs::path resolve_program_root_dir(ProgramArgs const& args) {
 }
 
 dt::Filesystem::Filesystem(ProgramArgs const& args)
-: m_root_path{Private::resolve_program_root_dir(args)} {}
+: m_root_dir{Private::resolve_program_root_dir(args)} {}
