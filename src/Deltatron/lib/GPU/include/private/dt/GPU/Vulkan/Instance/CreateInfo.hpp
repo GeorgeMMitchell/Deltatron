@@ -30,6 +30,11 @@ public:
   VulkanInstanceCreateInfo& operator=(VulkanInstanceCreateInfo const&) = delete;
 
   VulkanInstanceCreateInfo& operator=(VulkanInstanceCreateInfo&&) = delete;
+
+  constexpr auto info() const noexcept -> VkInstanceCreateInfo const& { return m_create_info; }
+
+private:
+  VkInstanceCreateInfo create_create_info(System const& system, VkApplicationInfo const& app_info) const;
 };
 
 }

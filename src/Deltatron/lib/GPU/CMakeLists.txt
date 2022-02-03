@@ -26,11 +26,13 @@ target_sources("dt_GPU"
     "src/GPU/Vulkan/Instance/CreateInfo/EnabledExtensions.cpp"
     "include/private/dt/GPU/Vulkan/Instance/CreateInfo.hpp"
     "src/GPU/Vulkan/Instance/CreateInfo.cpp"
-    "include/private/dt/GPU/Vulkan/Instance/AllocatorCallbacks.hpp"
-    "src/GPU/Vulkan/Instance/AllocatorCallbacks.cpp"
+    "include/private/dt/GPU/Vulkan/Instance/AllocationCallbacks.hpp"
+    "src/GPU/Vulkan/Instance/AllocationCallbacks.cpp"
     "include/private/dt/GPU/Vulkan/Instance.hpp"
+    "src/GPU/Vulkan/Instance.cpp"
 
     "include/private/dt/GPU/Vulkan.hpp"
+    "src/GPU/Vulkan.cpp"
 
     "include/private/dt/GPUImp.hpp"
 

@@ -21,5 +21,4 @@ target_sources("dt_Window"
       "include/private/dt/win32/Window/window_class.hpp"
       "src/win32/Window/window_class.cpp"
       "include/private/dt/win32/Window/window_proc.hpp"
-      "src/win32/Window/window_proc.cpp"
-    >)
+      "src/win32/Window/window_proc.cpp" >)
